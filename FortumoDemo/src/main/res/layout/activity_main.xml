@@ -1,0 +1,139 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              tools:context=".MainActivity"
+              android:orientation="vertical">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+        <Button
+                android:id="@+id/buyGoldButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Buy Gold"/>
+
+        <Button
+                android:id="@+id/buyBonusLevelButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Buy Bonus Level"/>
+
+        <Button
+                android:id="@+id/buyHealthPotionButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Buy health potion"/>
+
+        <Button
+                android:id="@+id/buyManaPotionButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Buy mana potion"/>
+
+    </LinearLayout>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Game data"
+            android:layout_gravity="center"
+            android:padding="10dp"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Gold:"/>
+
+            <TextView
+                    android:id="@+id/GoldAmountTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Bonus Level Unlocked:"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"/>
+
+            <TextView
+                    android:id="@+id/bonusUnlockedTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Health potions:"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"/>
+
+            <TextView
+                    android:id="@+id/healthPotionsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Mana potions:"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"/>
+
+            <TextView
+                    android:id="@+id/manaPotionsTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
