@@ -20,13 +20,11 @@ public class PaymentStatusReceiver extends BroadcastReceiver {
     static final String TAG = PaymentStatusReceiver.class.getSimpleName();
 
     public void onReceive(Context context, Intent intent) {
-        Log.i(TAG, "ManifestReceiver onReceive");
         Bundle extras = intent.getExtras();
 
         int billingStatus = extras.getInt("billing_status");
 
         if (billingStatus == Fortumo.MESSAGE_STATUS_BILLED) {
-            Log.i(TAG, "billed");
 
             String serviceId = extras.getString("service_id");
             String productName = extras.getString("product_name");
@@ -44,7 +42,8 @@ public class PaymentStatusReceiver extends BroadcastReceiver {
             if (serviceId.equals(PaymentConstants.POTION_SERVICE_ID) && productName.equals(PaymentConstants.PRODUCT_MANA_POTION)) {
                 PotionStack.addPotion(context, PaymentConstants.PRODUCT_MANA_POTION);
             }
-
+            Intent result = new Intent(PaymentConstants.SUCCESSFUL_PAYMENT);
+            context.sendBroadcast(result);
         }
     }
 }

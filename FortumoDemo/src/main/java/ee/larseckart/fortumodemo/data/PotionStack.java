@@ -32,7 +32,6 @@ public class PotionStack {
         }
 
         editor.commit();
-        Log.i(TAG, "added potion to the inventory");
         return currentPotionsAmount;
     }
 

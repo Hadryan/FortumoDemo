@@ -14,7 +14,6 @@ public class Wallet {
 
 
     public static int addGold(Context context, int amount) {
-        Log.i(TAG, "adding " + amount + " gold to wallet");
 
         SharedPreferences prefs = context.getSharedPreferences(PaymentConstants.PREFS,
                 Context.MODE_PRIVATE);

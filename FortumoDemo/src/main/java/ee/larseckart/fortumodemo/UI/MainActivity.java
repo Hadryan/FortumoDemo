@@ -58,27 +58,17 @@ public class MainActivity extends PaymentActivity {
     private BroadcastReceiver updateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.i(TAG, "updateReceiver onReceive");
             new UpdateDataTask().execute();
         }
     };
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        IntentFilter filter = new IntentFilter("com.fortumo.android.PAYMENT_STATUS_CHANGED");
+    protected void onStart() {
+        super.onStart();
+        IntentFilter filter = new IntentFilter(PaymentConstants.SUCCESSFUL_PAYMENT);
         registerReceiver(updateReceiver, filter);
         Log.i(TAG, "updateReceiver registered");
     }
-
-    /*
-    @Override
-    protected void onPause() {
-        unregisterReceiver(updateReceiver);
-        Log.i(TAG, "updateReceiver unregistered");
-        super.onPause();
-    }
-    */
 
     @Override
     protected void onStop() {
@@ -86,6 +76,7 @@ public class MainActivity extends PaymentActivity {
         Log.i(TAG, "updateReceiver unregistered");
         super.onPause();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -104,7 +95,6 @@ public class MainActivity extends PaymentActivity {
     }
 
     private void restorePurchases() {
-        Log.i(TAG, "restore purchases");
         new RestoreDataTask().execute();
     }
 
@@ -198,7 +188,6 @@ public class MainActivity extends PaymentActivity {
 
         @Override
         protected void onPostExecute(String[] data) {
-            Log.i(TAG, "UpdateDataTask onPostExecute()");
             goldTextView.setText(data[0]);
             bonusLevelUnlockedTextView.setText(data[1]);
             healthPotionTextView.setText(data[2]);
@@ -231,7 +220,7 @@ public class MainActivity extends PaymentActivity {
         protected void onPostExecute(String message) {
             Context context = MainActivity.this;
             Toast.makeText(context, message, Toast.LENGTH_LONG).show();
-            new UpdateDataTask().execute();
+            bonusLevelUnlockedTextView.setText(String.valueOf(BonusLevel.isBonusUnlocked(MainActivity.this)));
         }
     }
 

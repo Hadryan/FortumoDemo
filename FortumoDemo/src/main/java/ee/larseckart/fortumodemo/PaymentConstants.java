@@ -5,6 +5,9 @@ package ee.larseckart.fortumodemo;
  */
 public class PaymentConstants {
 
+    // Intent filter for successfull payments
+    public static final String SUCCESSFUL_PAYMENT= "ee.larseckart.SUCCESSFUL_PAYMENT";
+
     //These values are constants used for shared preferences.
     public static final String PREFS = "ee.larseckart.FortumoDemo.PREFS";
     public static final String SP_KEY_GOLD = "SP_KEY_GOLD";

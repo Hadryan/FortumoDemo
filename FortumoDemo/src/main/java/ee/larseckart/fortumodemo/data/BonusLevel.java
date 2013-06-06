@@ -14,7 +14,6 @@ public class BonusLevel {
 
 
     public static boolean unlockBonusLevel(Context context) {
-        Log.i(TAG, "unlockbonus");
         SharedPreferences prefs = context.getSharedPreferences(PaymentConstants.PREFS,
                 Context.MODE_PRIVATE);
 
